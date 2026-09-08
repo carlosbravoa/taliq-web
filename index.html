@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Taliq | Tu asistente de reclutamiento con IA</title>
+<meta name="description" content="Taliq redacta la oferta, evalúa a todos los candidatos con los mismos criterios y coordina las entrevistas. La decisión final siempre es tuya.">
+<meta property="og:title" content="Taliq | Tu asistente de reclutamiento con IA">
+<meta property="og:description" content="Taliq redacta la oferta, evalúa a todos los candidatos con los mismos criterios y coordina las entrevistas. La decisión final siempre es tuya.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_CL">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="canonical" href="https://taliq.cl/">
+<meta property="og:url" content="https://taliq.cl/">
+<meta property="og:image" content="https://taliq.cl/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Taliq | Tu asistente de reclutamiento con IA">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Taliq | Tu asistente de reclutamiento con IA">
+<meta name="twitter:description" content="Taliq redacta la oferta, evalúa a todos los candidatos con los mismos criterios y coordina las entrevistas. La decisión final siempre es tuya.">
+<meta name="twitter:image" content="https://taliq.cl/assets/og-image.png">
+<link rel="icon" href="favicon.ico" sizes="32x32">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+<meta name="theme-color" content="#0E9E8A">
+<!-- assets/styles.css is the traffic dashboard's render marker (dashboard/README.md):
+     keep it as the one external, render-blocking stylesheet, or readership stops being counted. -->
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <div class="header-inner">
+      <a class="brand" href="index.html"><span class="brand__mark">T</span>Taliq</a>
+      <nav class="nav" aria-label="Principal">
+        <a href="porque-taliq.html">Por qué Taliq</a>
+        <a href="como-funciona.html">Cómo funciona</a>
+        <a href="seguridad.html">Seguridad</a>
+        <a href="planes.html">Planes</a>
+        <a href="candidatos.html">Candidatos</a>
+        <a href="faq.html">FAQ</a>
+      </nav>
+      <div class="header-actions">
+        <button class="btn btn--primary" data-demo>Agenda una demo</button>
+        <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </div>
+  <div class="nav-mobile">
+    <div class="container" style="padding:0">
+      <a href="porque-taliq.html">Por qué Taliq</a>
+      <a href="como-funciona.html">Cómo funciona</a>
+      <a href="seguridad.html">Seguridad</a>
+      <a href="planes.html">Planes</a>
+      <a href="candidatos.html">Candidatos</a>
+      <a href="faq.html">FAQ</a>
+    </div>
+  </div>
+</header>
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+  <div class="container">
+    <div class="hero__grid">
+      <div>
+        <h1>Tu asistente de reclutamiento.<br><em>Desde la descripción del cargo al candidato ideal.</em></h1>
+        <p class="lede">La IA recorre todo el proceso. Tú tomas la última decisión. Menos tiempo perdido, mejor candidato elegido.</p>
+        <div class="btn-row">
+          <button class="btn btn--primary" data-demo>Agenda una demo</button>
+          <a class="btn btn--ghost" href="como-funciona.html">Cómo funciona</a>
+        </div>
+      </div>
+      <div class="hero__media reveal">
+        <figure class="evalcard" style="margin:0">
+          <figcaption class="evalcard__top">
+            <span class="evalcard__avatar" aria-hidden="true">AR</span>
+            <span>
+              <span class="evalcard__who">A. Rivas</span>
+              <span class="evalcard__role">Ingeniera Backend Senior</span>
+            </span>
+            <span class="evalcard__score"><b>84</b><span>Ajuste</span></span>
+          </figcaption>
+          <div class="evalcard__body">
+            <div class="dim">
+              <div class="dim__head"><b>Competencias técnicas</b><i>35%</i><span>9,0</span></div>
+              <div class="dim__bar"><i style="width:90%"></i></div>
+              <p class="dim__why">Ocho años de Python y PostgreSQL; experiencia en sistemas distribuidos.</p>
+            </div>
+            <div class="dim">
+              <div class="dim__head"><b>Experiencia relevante</b><i>25%</i><span>8,5</span></div>
+              <div class="dim__bar"><i style="width:85%"></i></div>
+              <p class="dim__why">Seis años en equipos de producto comparables.</p>
+            </div>
+            <div class="dim">
+              <div class="dim__head"><b>Ajuste al nivel</b><i>20%</i><span>8,0</span></div>
+              <div class="dim__bar"><i style="width:80%"></i></div>
+              <p class="dim__why">Ha sido mentora pero no ha tenido gente a cargo formalmente.</p>
+            </div>
+          </div>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PROBLEMA ===== -->
+<section class="band" id="problema">
+  <div class="container">
+    <div class="head head--center reveal">
+      <span class="eyebrow">El problema</span>
+      <h2>Encontrar al candidato correcto no debería tomar tanto tiempo.</h2>
+    </div>
+    <div class="grid grid--3">
+      <article class="card reveal">
+        <span class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg></span>
+        <h3>Para el reclutador</h3>
+        <p>Cientos de CVs por filtrar, agendas colapsadas y decisiones a ciegas por falta de datos clave.</p>
+      </article>
+      <article class="card reveal">
+        <span class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
+        <h3>Para el postulante</h3>
+        <p>Incertidumbre absoluta: postula y cae en un vacío de información sin saber si sigue en carrera.</p>
+      </article>
+      <article class="card reveal">
+        <span class="card__icon card__icon--warm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></span>
+        <h3>El resultado</h3>
+        <p>Procesos que se estiran semanas y terminan en fuga de talento hacia la competencia.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SOLUCIÓN ===== -->
+<section id="solucion">
+  <div class="container">
+    <div class="head head--center reveal">
+      <span class="eyebrow">La solución</span>
+      <h2>Taliq resuelve las cuatro cosas que importan.</h2>
+    </div>
+    <div class="grid grid--2">
+      <article class="card card--lift reveal">
+        <span class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2 3 14h8l-1 8 10-12h-8l1-8z"/></svg></span>
+        <h3>Eficiencia real sin cuellos de botella</h3>
+        <p>Taliq redacta la oferta, analiza cada CV al instante y entrega la terna ideal de inmediato. Sin esperas ni carga operativa manual.</p>
+      </article>
+      <article class="card card--lift reveal">
+        <span class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v18M8 21h8M3 7h18M6.5 7 3 14a4 4 0 0 0 7 0Zm11 0L14 14a4 4 0 0 0 7 0Z"/></svg></span>
+        <h3>Evaluación objetiva y transparente</h3>
+        <p>Criterios estandarizados para todos los postulantes, con puntajes claros y su fundamento a la vista. Reduce la variabilidad entre evaluaciones y hace visible el criterio detrás de cada decisión.</p>
+      </article>
+      <article class="card card--lift reveal">
+        <span class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span>
+        <h3>Experiencia de candidato que fortalece tu marca</h3>
+        <p>El postulante monitorea su avance y mantiene comunicación abierta. Transforma la incertidumbre en una reputación empleadora sólida.</p>
+      </article>
+      <article class="card card--lift reveal">
+        <span class="card__icon card__icon--warm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>
+        <h3>Seguridad y privacidad a nivel corporativo</h3>
+        <p>Infraestructura single-tenant dedicada en todos los planes, sin excepción. Tus datos nunca comparten servidor ni base de datos con los de otro cliente.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CÓMO FUNCIONA ===== -->
+<section class="band" id="como-funciona">
+  <div class="container">
+    <div class="head head--center reveal">
+      <span class="eyebrow">Cómo funciona</span>
+      <h2>Del cargo vacante a la oferta, en seis pasos.</h2>
+      <p class="lede">Taliq no evalúa con una plantilla genérica. Define qué se mide en cada cargo antes de que llegue el primer CV, y aplica eso mismo a todos los candidatos. No tienes que configurar nada: Taliq lo propone, tú apruebas o ajustas.</p>
+    </div>
+    <div class="flow reveal">
+      <div class="flow__item"><div class="flow__n">1</div><div class="flow__t">Describes<br>el cargo</div></div>
+      <div class="flow__item flow__item--hi"><div class="flow__n">2</div><div class="flow__t">Taliq define<br>los criterios</div></div>
+      <div class="flow__item"><div class="flow__n">3</div><div class="flow__t">La IA evalúa<br>con esos criterios</div></div>
+      <div class="flow__item"><div class="flow__n">4</div><div class="flow__t">Eliges a quién<br>entrevistar</div></div>
+      <div class="flow__item"><div class="flow__n">5</div><div class="flow__t">El candidato<br>agenda solo</div></div>
+      <div class="flow__item"><div class="flow__n">6</div><div class="flow__t">Debrief<br>y decisión</div></div>
+    </div>
+    <p class="flow-link reveal"><a href="como-funciona.html">Ver el detalle de cada paso &rarr;</a></p>
+    <div class="flow-note reveal">
+      <b>Por qué importa evaluar con el mismo criterio.</b> Cuando el criterio se va formando mientras se revisan los CVs, el primer candidato fija la vara y el vigésimo se compara contra otra cosa. Taliq lo define antes y no lo mueve: todos los candidatos de un cargo se miden con las mismas dimensiones y los mismos pesos.
+    </div>
+  </div>
+</section>
+
+<!-- ===== PLANES ===== -->
+<section id="planes">
+  <div class="container">
+    <div class="head head--center reveal">
+      <span class="eyebrow">Planes</span>
+      <h2>Un despliegue, un precio predecible.</h2>
+      <p class="lede">Sin cobro por postulante, sin sorpresas en la factura.</p>
+    </div>
+    <div class="plans">
+      <article class="plan reveal">
+        <p class="plan__for">Hasta 5 búsquedas simultáneas</p>
+        <h3>Starter</h3>
+        <div class="plan__price">6 UF <small>/ mes</small></div>
+        <p class="plan__context">Cualquier tamaño de empresa</p>
+        <ul class="plan__list">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>ATS completo</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Scoring IA explicable</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Interview kit + debrief</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Portal del candidato</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Compliance LL144 / GDPR</span></li>
+          <li class="plan__no"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg><span>Customer Success</span></li>
+        </ul>
+        <button class="btn btn--ghost" data-demo>Pide tu piloto</button>
+      </article>
+      <article class="plan plan--featured reveal">
+        <span class="plan__flag">Más popular</span>
+        <p class="plan__for">Hasta 20 búsquedas simultáneas</p>
+        <h3>Growth</h3>
+        <div class="plan__price">13 UF <small>/ mes</small></div>
+        <p class="plan__context">Volumen medio-alto de contratación</p>
+        <ul class="plan__list">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Todo lo de Starter</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Talent CRM básico</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Audit log completo</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>SSO / SAML</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Analytics y KPIs</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Customer Success</span></li>
+        </ul>
+        <button class="btn btn--primary" data-demo>Pide tu piloto</button>
+      </article>
+      <article class="plan reveal">
+        <p class="plan__for">Hasta 70 búsquedas simultáneas</p>
+        <h3>Scale</h3>
+        <div class="plan__price">28 UF <small>/ mes</small></div>
+        <p class="plan__context">Operaciones de RRHH grandes</p>
+        <ul class="plan__list">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Todo lo de Growth</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>LLM key por cliente</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>API + webhooks</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Integración ERP</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Auditoría de sesgo IA anual</span></li>
+        </ul>
+        <button class="btn btn--ghost" data-demo>Pide tu piloto</button>
+      </article>
+      <article class="plan reveal">
+        <p class="plan__for">Búsquedas a medida</p>
+        <h3>Enterprise</h3>
+        <div class="plan__price plan__price--consult">A consulta</div>
+        <p class="plan__context">Multinacional</p>
+        <ul class="plan__list">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Todo lo de Scale</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>SLA 99,9%</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>CS dedicado</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Auditoría de sesgo publicada</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Compliance multinacional</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Factura CLP o USD</span></li>
+        </ul>
+        <button class="btn btn--ghost" data-demo>Contactar a ventas</button>
+      </article>
+    </div>
+    <div class="plans__note reveal"><span>Pide tu piloto. Sin tarjeta de crédito.</span></div>
+    <p class="plans__more reveal"><a href="planes.html">Ver la comparación completa &rarr;</a></p>
+  </div>
+</section>
+
+<!-- ===== NOSOTROS ===== -->
+<section class="band" id="nosotros">
+  <div class="container">
+    <div class="head head--center reveal">
+      <span class="eyebrow">Quiénes somos</span>
+      <h2>Dos personas que conocen el problema desde adentro.</h2>
+    </div>
+    <div class="team">
+      <article class="team__card reveal">
+        <div class="team__top">
+          <!-- TODO: reemplazar por foto real -->
+          <div class="team__avatar">D</div>
+          <div>
+            <div class="team__name">Daniela Bravo</div>
+            <div class="team__role">Co-fundadora · Negocio</div>
+          </div>
+        </div>
+        <p class="team__bio">&ldquo;Más de diez años con tecnología SaaS para equipos de personas en Latinoamérica. Vi cuánto tiempo se pierde en procesos que deberían ser simples.&rdquo;</p>
+      </article>
+      <article class="team__card reveal">
+        <div class="team__top">
+          <!-- TODO: reemplazar por foto real -->
+          <div class="team__avatar">C</div>
+          <div>
+            <div class="team__name">Carlos Bravo</div>
+            <div class="team__role">Co-fundador · Tecnología</div>
+          </div>
+        </div>
+        <p class="team__bio">&ldquo;Más de veinte años construyendo sistemas de información a escala. Cuando construimos Taliq, quisimos realizar un sistema con la mejor experiencia de usuario, donde la IA ayuda en todo proceso sin quitar la responsabilidad que tenemos como personas.&rdquo;</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="container">
+    <h2>¿Quieres verlo en tu empresa?</h2>
+    <p>Sin tarjeta de crédito. Sin cobro automático.</p>
+    <button class="btn btn--on-ink" data-demo>Pide tu piloto</button>
+    <p class="cta__fine">Te contactamos en menos de 24 horas hábiles.</p>
+  </div>
+</section>
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a class="brand" href="index.html"><span class="brand__mark">T</span>Taliq</a>
+        <p class="footer-tag">Software de selección (ATS) con IA que te acompaña en todo el proceso: desde la creación de la oferta hasta encontrar al candidato correcto, sin burocracia y con las mismas reglas para todos. Tus candidatos están acompañados y protegidos en cada paso.</p>
+      </div>
+      <div>
+        <h4>Producto</h4>
+        <ul>
+          <li><a href="porque-taliq.html">Por qué Taliq</a></li>
+          <li><a href="como-funciona.html">Cómo funciona</a></li>
+          <li><a href="seguridad.html">Seguridad</a></li>
+          <li><a href="planes.html">Planes</a></li>
+          <li><a href="candidatos.html">Candidatos</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Empresa</h4>
+        <ul>
+          <li><a href="index.html#nosotros">Quiénes somos</a></li>
+          <li><a href="#" data-demo>Contacto</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="privacidad.html">Política de privacidad</a></li>
+          <li><a href="#" data-cookies>Cookies</a></li>
+          <li><a href="#">Términos</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Taliq. Todos los derechos reservados.</span>
+      <span><a href="mailto:hola@taliq.cl">hola@taliq.cl</a> · Santiago, Chile · LATAM</span>
+    </div>
+  </div>
+</footer>
+<div class="modal-overlay" id="modal-demo" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+  <div class="modal">
+    <button class="modal__close" aria-label="Cerrar">&times;</button>
+    <h2 id="modal-title">Conoce Taliq en 30 minutos</h2>
+    <p class="modal__sub">Completa tus datos y te contactamos en menos de 24 horas hábiles.</p>
+    <form id="form-demo" novalidate>
+      <div class="hp" aria-hidden="true"><label for="website">Sitio web de la empresa *</label><input type="text" id="website" name="website" placeholder="https://www.tuempresa.cl" tabindex="-1" autocomplete="off" data-required="true"></div>
+      <div class="field-row">
+        <div class="field"><label for="nombre">Nombre completo</label>
+          <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required></div>
+        <div class="field"><label for="empresa">Empresa</label>
+          <input type="text" id="empresa" name="empresa" placeholder="Nombre de tu empresa" required></div>
+      </div>
+      <div class="field"><label for="email">Correo corporativo</label>
+        <input type="email" id="email" name="email" placeholder="tu@empresa.cl" required></div>
+      <div class="field-row">
+        <div class="field"><label for="cargo">Cargo</label>
+          <input type="text" id="cargo" name="cargo" placeholder="Tu cargo" required></div>
+        <div class="field"><label for="pais">País</label>
+          <select id="pais" name="pais" required>
+            <option value="" disabled selected>Selecciona</option>
+            <option>Chile</option><option>Argentina</option><option>Colombia</option>
+            <option>México</option><option>Perú</option><option>Otro</option>
+          </select></div>
+      </div>
+      <div class="field"><label for="volumen">¿Cuántas personas contratan por mes?</label>
+        <select id="volumen" name="volumen" required>
+          <option value="" disabled selected>Selecciona</option>
+          <option>1 a 5</option><option>5 a 20</option><option>20 a 50</option><option>Más de 50</option>
+        </select></div>
+      <div class="field-check">
+        <input type="checkbox" id="privacidad" name="privacidad" required>
+        <label for="privacidad">Acepto la <a href="privacidad.html" target="_blank" rel="noopener">política de privacidad</a></label>
+      </div>
+      <button type="submit" class="btn btn--primary">Quiero mi demo</button>
+    </form>
+    <div class="modal__success">
+      <h3>Listo. Te contactamos pronto.</h3>
+      <p>Recibimos tu solicitud. En menos de 24 horas hábiles alguien del equipo se comunica contigo.</p>
+    </div>
+  </div>
+</div>
+<div class="cookie-banner" id="cookie-banner" role="dialog" aria-labelledby="cookie-title" hidden>
+  <div class="cookie-banner__inner">
+    <div class="cookie-banner__text">
+      <strong id="cookie-title">Este sitio no usa cookies de rastreo.</strong>
+      <p>Solo guardamos tu preferencia sobre este aviso en tu navegador. Si más adelante incorporamos analítica, se activará únicamente si la aceptas. <a href="privacidad.html#cookies">Más información</a>.</p>
+    </div>
+    <div class="cookie-banner__actions">
+      <button type="button" class="btn btn--ghost" data-consent="essential">Solo esenciales</button>
+      <button type="button" class="btn btn--primary" data-consent="all">Aceptar todo</button>
+    </div>
+  </div>
+</div>
+<script src="assets/site.js"></script>
+</body>
+</html>
