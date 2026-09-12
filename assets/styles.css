@@ -100,7 +100,7 @@ section{padding:clamp(56px,8vw,88px) 0}
 .nav{display:flex;gap:1.55rem}
 .nav a+a{margin-left:0}
 @supports not (gap:1rem){.nav a+a{margin-left:1.55rem}}
-.nav a{font-size:.9rem;font-weight:520;color:var(--text-2);transition:color .15s}
+.nav a{font-size:.9rem;font-weight:520;color:var(--text-2);transition:color .15s;white-space:nowrap}
 .nav a:hover,.nav a[aria-current="page"]{color:var(--accent-2)}
 .header-actions{display:flex;align-items:center;gap:.6rem;flex-shrink:0}
 .nav-toggle{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px}
@@ -353,14 +353,15 @@ section{padding:clamp(56px,8vw,88px) 0}
 
 /* ---------- Responsive ---------- */
 @media (max-width:1000px){
+  /* Siete enlaces más la marca y el botón no caben bajo ~1000px: el menú pasa a la hamburguesa. */
+  .nav{display:none}
+  .nav-toggle{display:flex}
   .hero__grid{grid-template-columns:1fr}
   .hero__media{max-width:30rem}
   .footer-grid{grid-template-columns:1fr 1fr}
   .plans{grid-template-columns:repeat(2,1fr)}
 }
 @media (max-width:860px){
-  .nav{display:none}
-  .nav-toggle{display:flex}
   .grid--3{grid-template-columns:1fr}
   .flow{grid-template-columns:repeat(3,1fr);gap:1.4rem 0}
   .flow__item:nth-child(3)::after{display:none}
