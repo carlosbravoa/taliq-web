@@ -118,6 +118,23 @@ actualizar `privacidad.html`.
 | `--ink` | `#0A1017` | Fondos oscuros |
 | `--paper` | `#FCFBF9` | Fondo base |
 | `--paper-2` | `#F4F2ED` | Fondo de bandas alternas |
+| `--accent-deep` | `#0A7D6D` | Fondos verdes con texto blanco encima (en ambos temas) |
+
+**Modo oscuro.** Sigue la preferencia del sistema (`prefers-color-scheme`), sin
+selector, igual que el blog en `/blog/`. Es un bloque `@media` en `styles.css` que
+redefine las mismas variables con la paleta oscura del blog; `404.html` tiene una
+copia en línea. Tres cosas a cuidar al tocar estilos:
+
+- **Colores sólo por variable.** Un `#fff` o un `rgba(252,251,249,…)` escrito a mano
+  queda claro sobre fondo oscuro. Si hace falta un color nuevo, se agrega a `:root` y
+  a su bloque oscuro.
+- **`--accent-2` es para texto; `--accent-deep`, para fondos.** En oscuro
+  `--accent-2` se aclara para leerse, y como fondo de letra blanca deja de leerse.
+- **No mover el modo oscuro a otra hoja** (`<link media="(prefers-color-scheme:dark)">`):
+  sería una segunda hoja externa y rompería la regla 1.
+
+Si se cambia la paleta oscura, conviene cambiarla también en el tema del blog, para
+que pasar de una página a un artículo no cambie de colores.
 
 ## Decisiones de contenido
 
@@ -137,3 +154,7 @@ Tres cosas que están así a propósito:
 **Hacer merge de un PR no publica nada.** El sitio se sube a S3 y se invalida la
 CDN a mano desde la máquina del mantenedor, con la infraestructura documentada
 aparte. Un cambio aprobado queda en línea cuando alguien corre ese paso.
+
+**El blog (`/blog/`) no está en este repo.** Se sirve desde el mismo dominio pero lo
+construye y publica otro proyecto, por separado. Publicar este sitio no toca el blog,
+y al revés. No crear un directorio `blog/` acá: no se publicaría.

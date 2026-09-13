@@ -17,6 +17,15 @@
   :root{
     --ink:#141E28; --text-2:#3E4E5C; --paper:#FCFBF9; --surface:#FFFFFF;
     --line:#E3E0D8; --accent:#0E9E8A; --accent-2:#0A7D6D; --accent-3:#D8F3EE;
+    color-scheme:light dark;
+  }
+  /* El mismo modo oscuro que la hoja del sitio, copiado a mano porque esta
+     página no puede enlazarla. */
+  @media (prefers-color-scheme:dark){
+    :root{
+      --ink:#EEF3F5; --text-2:#A9BCC7; --paper:#0A1017; --surface:#12212C;
+      --line:#24374A; --accent-2:#2FC2AB; --accent-3:#0F2F2C;
+    }
   }
   *{box-sizing:border-box}
   body{
@@ -59,7 +68,7 @@
     .btn{transition:border-color .15s, background .15s}
   }
   .btn:hover{border-color:var(--accent)}
-  .btn--primary:hover{background:var(--accent-2)}
+  .btn--primary:hover{background:#0A7D6D}
 </style>
 </head>
 <body>

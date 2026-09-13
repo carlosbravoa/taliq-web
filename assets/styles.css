@@ -18,16 +18,54 @@
   --accent:#0E9E8A;
   --accent-2:#0A7D6D;
   --accent-3:#D8F3EE;
+  /* Verde oscuro para *fondos* con texto blanco encima (hover del botón, bloque
+     de ley, avatar). En claro es igual a --accent-2, pero en oscuro --accent-2
+     se aclara para leerse como texto y ya no sirve de fondo para letra blanca. */
+  --accent-deep:#0A7D6D;
   --warm:#D98A2B;
   --warm-2:#F6E8D2;
   --line:#E2DFD8;
   --line-2:#CFCBC2;
+  --header-bg:rgba(252,251,249,.9);
+  --error:#B42318;
   --r:10px;
   --r-lg:16px;
   --shadow-sm:0 1px 3px rgba(16,27,37,.06);
   --shadow-md:0 8px 24px rgba(16,27,37,.09);
   --max:1120px;
   --font:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+  color-scheme:light dark;
+}
+
+/* ---------- Modo oscuro ----------
+   Sigue la preferencia del sistema, sin selector: es lo mismo que hace el blog
+   (taliq.cl/blog/), y un selector sólo en una de las dos mitades haría que el
+   sitio cambie de tema al pasar de una a otra. Los valores son los del tema
+   oscuro del blog (sites/taliq/site.config.ts en static-blog), así ambos se ven
+   como un solo sitio.
+   Va aquí y no en una hoja aparte: styles.css tiene que seguir siendo la única
+   hoja externa (ver README.md, «Reglas que conviene no romper»). */
+@media (prefers-color-scheme:dark){
+  :root{
+    --ink:#05090D;        /* bandas oscuras y CTA: más hondas que el fondo, no más claras */
+    --paper:#0A1017;
+    --paper-2:#0F1922;
+    --surface:#12212C;
+    --surface-2:#172A37;
+    --text:#EEF3F5;
+    --text-2:#A9BCC7;
+    --muted:#8599A8;
+    --accent-2:#2FC2AB;   /* texto y enlaces: #0A7D6D no se lee sobre fondo oscuro */
+    --accent-3:#0F2F2C;
+    --warm:#E9A24A;
+    --warm-2:#2E2415;
+    --line:#24374A;
+    --line-2:#34495C;
+    --header-bg:rgba(10,16,23,.88);
+    --error:#F0705F;
+    --shadow-sm:0 1px 3px rgba(0,0,0,.4);
+    --shadow-md:0 8px 24px rgba(0,0,0,.45);
+  }
 }
 
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
@@ -78,7 +116,7 @@ section{padding:clamp(56px,8vw,88px) 0}
   font-family:inherit;white-space:nowrap;
 }
 .btn--primary{background:var(--accent);color:#fff;border-color:var(--accent)}
-.btn--primary:hover{background:var(--accent-2);border-color:var(--accent-2)}
+.btn--primary:hover{background:var(--accent-deep);border-color:var(--accent-deep)}
 .btn--ghost{background:transparent;color:var(--text);border-color:var(--line-2)}
 .btn--ghost:hover{border-color:var(--text-2)}
 .btn--on-ink{background:#fff;color:var(--ink);border-color:#fff}
@@ -90,7 +128,7 @@ section{padding:clamp(56px,8vw,88px) 0}
 /* ---------- Header ---------- */
 .site-header{
   position:sticky;top:0;z-index:60;
-  background:rgba(252,251,249,.9);backdrop-filter:blur(12px);
+  background:var(--header-bg);backdrop-filter:blur(12px);
   border-bottom:1px solid var(--line);transition:box-shadow .2s;
 }
 .site-header.is-scrolled{box-shadow:var(--shadow-sm)}
@@ -119,7 +157,7 @@ section{padding:clamp(56px,8vw,88px) 0}
 /* ---------- Evalcard ---------- */
 .evalcard{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow-md)}
 .evalcard__top{display:flex;align-items:center;gap:.7rem;padding:.85rem 1.05rem;border-bottom:1px solid var(--line);background:var(--surface-2)}
-.evalcard__avatar{width:34px;height:34px;border-radius:99px;flex:none;background:linear-gradient(135deg,var(--accent),var(--accent-2));display:grid;place-items:center;color:#fff;font-weight:700;font-size:.78rem}
+.evalcard__avatar{width:34px;height:34px;border-radius:99px;flex:none;background:linear-gradient(135deg,var(--accent),var(--accent-deep));display:grid;place-items:center;color:#fff;font-weight:700;font-size:.78rem}
 .evalcard__who{display:block;font-weight:640;font-size:.9rem}
 .evalcard__role{display:block;font-size:.76rem;color:var(--muted)}
 .evalcard__score{margin-left:auto;text-align:right}
@@ -204,7 +242,7 @@ section{padding:clamp(56px,8vw,88px) 0}
 
 /* ---------- Bloque de ley ---------- */
 .lawbox{
-  background:var(--accent-2);color:#fff;border-radius:var(--r-lg);
+  background:var(--accent-deep);color:#fff;border-radius:var(--r-lg);
   padding:clamp(1.5rem,3vw,2.1rem);margin-bottom:2.4rem;
 }
 .lawbox h3{font-size:1.18rem;color:#fff;margin-bottom:.55rem}
@@ -255,7 +293,7 @@ section{padding:clamp(56px,8vw,88px) 0}
 .cmp th:first-child,.cmp td:first-child{text-align:left;min-width:230px}
 .cmp thead th{background:var(--ink);color:#fff;font-weight:640;position:sticky;top:0}
 .cmp thead th small{display:block;font-size:.74rem;font-weight:400;color:var(--on-ink-2);margin-top:2px}
-.cmp thead th.is-featured{background:var(--accent-2)}
+.cmp thead th.is-featured{background:var(--accent-deep)}
 .cmp .cmp__block td{background:var(--paper-2);font-size:.72rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);text-align:left}
 .cmp td.is-featured{background:rgba(14,158,138,.055);color:var(--accent-2);font-weight:600}
 .cmp td.is-no{color:var(--muted)}
@@ -382,7 +420,7 @@ section{padding:clamp(56px,8vw,88px) 0}
   html{scroll-behavior:auto}
 }
 .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
-.form-error{display:block;color:#B42318;font-size:.9rem;margin:.2rem 0 .8rem;min-height:1.2em}
+.form-error{display:block;color:var(--error);font-size:.9rem;margin:.2rem 0 .8rem;min-height:1.2em}
 .form-error:empty{display:none}
 
 /* ---------- Página legal ---------- */
