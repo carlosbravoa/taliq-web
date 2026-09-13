@@ -144,7 +144,13 @@ section{padding:clamp(56px,8vw,88px) 0}
 .nav-toggle{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px}
 .nav-toggle span{display:block;width:22px;height:2px;background:var(--text);border-radius:2px;transition:.25s}
 .nav-mobile{display:none;flex-direction:column;padding:.6rem 24px 1.2rem;border-top:1px solid var(--line);background:var(--paper)}
-.nav-mobile a{padding:.72rem 0;font-size:.96rem;color:var(--text-2);border-bottom:1px solid var(--line)}
+/* Los enlaces están dentro de un .container, no son hijos directos de .nav-mobile:
+   la columna tiene que ser ese contenedor, y cada enlace un bloque de ancho
+   completo. Si no, los enlaces quedan en línea, varios por renglón, con la raya
+   inferior del ancho de cada texto. width:100% porque, como hijo de un flex,
+   el margin-inline:auto de .container lo encoge al texto y lo centra. */
+.nav-mobile .container{display:flex;flex-direction:column;width:100%}
+.nav-mobile a{display:block;padding:.72rem 0;font-size:.96rem;color:var(--text-2);border-bottom:1px solid var(--line)}
 .nav-mobile a:last-child{border-bottom:none}
 .nav-mobile.is-open{display:flex}
 
