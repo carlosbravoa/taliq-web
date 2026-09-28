@@ -111,13 +111,31 @@ La forma más segura es copiar una página existente y reemplazar el contenido.
 <button class="btn btn--primary" data-demo>Agenda una demo</button>
 ```
 
+**Etiquetas de campaña (UTM).** Un enlace de campaña trae `utm_source`,
+`utm_medium`, `utm_campaign` (y opcionalmente `utm_term`, `utm_content`) sólo en la
+página donde aterriza. `site.js` las guarda en `sessionStorage` al cargar cualquier
+página, las envía con el formulario de demo (la Lambda las guarda con la solicitud
+y las muestra en el correo) y agrega source, medium y campaign a la redirección a
+`success.html`. Un enlace etiquetado nuevo reemplaza al anterior. El dashboard
+cuenta las llegadas por campaña desde los registros de CloudFront, sin nada de
+esto; lo del formulario es para saber la campaña exacta de cada solicitud.
+
+Para que los números agrupen bien, las etiquetas en minúsculas y siempre con el
+mismo nombre, y los enlaces a `https://taliq.cl/…` directo (www redirige y
+conserva las etiquetas, pero agrega un salto). Una campaña que apunte al blog se
+cuenta en el dashboard, pero sus etiquetas no llegan al formulario: el blog no
+carga `site.js`.
+
 **Animación de entrada.** Los elementos con clase `reveal` aparecen al entrar en
 viewport vía `IntersectionObserver`, con un failsafe que los muestra igual
 después de 1,2 segundos. La regla CSS está protegida por la clase `js` en el
 `<html>`, así que sin JavaScript el contenido se ve normal.
 
-**Aviso de cookies.** El sitio no usa cookies ni analítica. Lo único que guarda
-es la preferencia del aviso en `localStorage`, bajo la clave `taliq-consent`.
+**Aviso de cookies.** El sitio no usa cookies ni analítica. Guarda dos cosas en el
+navegador: la preferencia del aviso en `localStorage`, bajo la clave
+`taliq-consent`, y las etiquetas de campaña (ver abajo) en `sessionStorage`, bajo
+`taliq-utm`. Las dos están descritas en `privacidad.html`, sección 7, y en el
+texto del aviso; si se agrega una tercera, hay que actualizar ambos.
 `window.taliqConsent()` devuelve `{v, analytics, ts}`. Si algún día se agrega
 analítica, tiene que activarse sólo cuando `analytics === true`, y hay que
 actualizar `privacidad.html`.

@@ -3,6 +3,29 @@
    =========================================================== */
 document.documentElement.classList.add('js');
 
+/* ---------- Etiquetas de campaña (UTM) ----------
+   Un enlace de campaña trae utm_source, utm_medium, etc. sólo en la primera
+   página; si la persona pasa a planes.html antes de pedir la demo, se pierden.
+   Se guardan en sessionStorage (se borra al cerrar la pestaña; no es una
+   cookie) para mandarlas con el formulario. Un enlace etiquetado nuevo
+   reemplaza al anterior. Descrito en privacidad.html, sección 7. */
+var UTM_KEY = 'taliq-utm';
+var UTM_FIELDS = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content'];
+(function () {
+  var q, tags = {}, any = false;
+  try { q = new URLSearchParams(window.location.search); } catch (e) { return; }
+  UTM_FIELDS.forEach(function (k) {
+    var v = q.get(k);
+    if (v) { tags[k] = v.slice(0, 100); any = true; }
+  });
+  if (any) {
+    try { sessionStorage.setItem(UTM_KEY, JSON.stringify(tags)); } catch (e) { /* modo privado, etc. */ }
+  }
+})();
+function storedUtm() {
+  try { return JSON.parse(sessionStorage.getItem(UTM_KEY)) || {}; } catch (e) { return {}; }
+}
+
 document.addEventListener('DOMContentLoaded', function () {
 
   /* ---------- Header: sombra al hacer scroll ---------- */
@@ -74,6 +97,8 @@ document.addEventListener('DOMContentLoaded', function () {
       var payload = Object.fromEntries(new FormData(form).entries());
       payload.privacidad = !!payload.privacidad;
       payload.elapsed_ms = Date.now() - openedAt;
+      var utm = storedUtm();
+      UTM_FIELDS.forEach(function (k) { if (utm[k]) payload[k] = String(utm[k]); });
 
       var submitBtn = form.querySelector('button[type="submit"]');
       var errorBox = form.querySelector('.form-error');
@@ -103,10 +128,17 @@ document.addEventListener('DOMContentLoaded', function () {
         // queda en «Enviando…» hasta que el navegador cambie de página.
         // El parámetro `s` distingue esta llegada de una visita directa o una
         // recarga: success.html lo quita de la URL en cuanto carga, así que
-        // sólo la primera petición tras un envío lo lleva.
+        // sólo la primera petición tras un envío lo lleva. Las etiquetas de
+        // campaña van detrás, para que una herramienta externa pueda contar
+        // conversiones por campaña; el dashboard no cuenta success.html como
+        // llegada de campaña.
         sent = true;
-        window.location.assign('/success.html?s=' + Date.now().toString(36) +
-          Math.random().toString(36).slice(2, 8));
+        var next = '/success.html?s=' + Date.now().toString(36) +
+          Math.random().toString(36).slice(2, 8);
+        ['utm_source', 'utm_medium', 'utm_campaign'].forEach(function (k) {
+          if (utm[k]) next += '&' + k + '=' + encodeURIComponent(utm[k]);
+        });
+        window.location.assign(next);
       }).catch(function (err) {
         var msg = 'No pudimos enviar tu solicitud. Intenta de nuevo o escríbenos a hola@taliq.cl.';
         if (err && (err.message === 'disposable_email' || err.message === 'email_domain_no_mx')) {
