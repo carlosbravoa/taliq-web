@@ -15,6 +15,7 @@ planes.html             Tabla comparativa completa + preguntas de precios
 candidatos.html         La experiencia de quien postula
 faq.html                Preguntas frecuentes
 privacidad.html         Política de privacidad
+success.html            Llegada tras enviar el formulario de demo (ver más abajo)
 404.html                Página de error (ver más abajo: es especial)
 assets/styles.css       Todos los estilos
 assets/site.js          Nav, modal de demo, acordeón, reveal, aviso de cookies
@@ -73,6 +74,20 @@ formulario, hay que conservar ambos.
 
 El `POST` va a `/api/demo` con JSON. El servidor valida de nuevo todo, así que la
 validación del navegador es comodidad, no seguridad.
+
+**Al enviarse bien, `site.js` redirige a `/success.html`.** El mensaje de éxito no
+se muestra dentro del modal sino en esa página, para que cada solicitud aceptada
+quede como una visita a una URL propia y se pueda medir desde fuera (logs de
+CloudFront, herramientas de conversión). Por eso `success.html` es la excepción a
+la regla 4: lleva `noindex`, no está en el sitemap y no se enlaza desde el menú.
+Si se enlazara o se indexara, las visitas dejarían de significar «formulario
+enviado».
+
+La redirección lleva `?s=<token>` y la página lo quita de la URL al cargar. Así
+una recarga, un «atrás» o alguien que escribe la URL a mano llegan sin el
+parámetro, y al medir conviene contar sólo las peticiones a `/success.html?s=`.
+El número exacto sigue siendo el del servidor (DynamoDB); esto es para
+herramientas externas.
 
 ### 4. Cada página necesita su cabecera completa
 

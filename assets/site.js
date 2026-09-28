@@ -28,7 +28,6 @@ document.addEventListener('DOMContentLoaded', function () {
   /* ---------- Modal de demo ---------- */
   var overlay = document.getElementById('modal-demo');
   var form = document.getElementById('form-demo');
-  var success = document.querySelector('.modal__success');
   var lastFocused = null;
 
   var openedAt = Date.now();
@@ -88,6 +87,7 @@ document.addEventListener('DOMContentLoaded', function () {
       submitBtn.disabled = true;
       var originalLabel = submitBtn.textContent;
       submitBtn.textContent = 'Enviando…';
+      var sent = false;
 
       fetch('/api/demo', {
         method: 'POST',
@@ -98,10 +98,15 @@ document.addEventListener('DOMContentLoaded', function () {
           if (!r.ok || !j.ok) throw new Error(j.error || ('HTTP ' + r.status));
         });
       }).then(function () {
-        form.style.display = 'none';
-        if (success) success.style.display = 'block';
-        var modalBox = form.closest('.modal');
-        if (modalBox) modalBox.classList.add('is-sent');
+        // El mensaje de éxito vive en su propia página para poder medir las
+        // solicitudes aceptadas desde fuera (ver success.html). El botón se
+        // queda en «Enviando…» hasta que el navegador cambie de página.
+        // El parámetro `s` distingue esta llegada de una visita directa o una
+        // recarga: success.html lo quita de la URL en cuanto carga, así que
+        // sólo la primera petición tras un envío lo lleva.
+        sent = true;
+        window.location.assign('/success.html?s=' + Date.now().toString(36) +
+          Math.random().toString(36).slice(2, 8));
       }).catch(function (err) {
         var msg = 'No pudimos enviar tu solicitud. Intenta de nuevo o escríbenos a hola@taliq.cl.';
         if (err && (err.message === 'disposable_email' || err.message === 'email_domain_no_mx')) {
@@ -112,6 +117,7 @@ document.addEventListener('DOMContentLoaded', function () {
         errorBox.textContent = msg;
         if (window.console) console.error('Demo form error:', err);
       }).finally(function () {
+        if (sent) return;
         submitBtn.disabled = false;
         submitBtn.textContent = originalLabel;
       });

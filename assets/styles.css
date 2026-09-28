@@ -386,10 +386,6 @@ section{padding:clamp(56px,8vw,88px) 0}
 .field-check label{font-size:.86rem;font-weight:400;color:var(--text-2)}
 .field-check a{color:var(--accent-2);text-decoration:underline}
 .modal .btn{width:100%}
-.modal__success{display:none;text-align:center;padding:1.2rem 0}
-.modal.is-sent #modal-title,.modal.is-sent .modal__sub{display:none}
-.modal__success h3{font-size:1.22rem;margin-bottom:.6rem}
-.modal__success p{font-size:.94rem;color:var(--text-2)}
 
 /* ---------- Reveal ---------- */
 .js .reveal{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s cubic-bezier(.22,1,.36,1)}

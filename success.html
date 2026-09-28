@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Solicitud recibida | Taliq</title>
+<meta name="robots" content="noindex">
+<meta name="description" content="Recibimos tu solicitud de demo. En menos de 24 horas hábiles alguien del equipo de Taliq se comunica contigo.">
+<meta property="og:title" content="Solicitud recibida | Taliq">
+<meta property="og:description" content="Recibimos tu solicitud de demo. En menos de 24 horas hábiles alguien del equipo de Taliq se comunica contigo.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_CL">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="canonical" href="https://taliq.cl/success.html">
+<meta property="og:url" content="https://taliq.cl/success.html">
+<meta property="og:image" content="https://taliq.cl/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Taliq | Tu asistente de reclutamiento con IA">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Solicitud recibida | Taliq">
+<meta name="twitter:description" content="Recibimos tu solicitud de demo. En menos de 24 horas hábiles alguien del equipo de Taliq se comunica contigo.">
+<meta name="twitter:image" content="https://taliq.cl/assets/og-image.png">
+<link rel="icon" href="favicon.ico" sizes="32x32">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+<meta name="theme-color" content="#0E9E8A">
+<!-- assets/styles.css es la única hoja de estilos externa del sitio, y tiene que
+     seguir siéndolo: es lo que permite contar cuánta gente lee de verdad. No
+     ponerla en línea, no dividirla, no agregarle un hash al nombre y no sumar una
+     segunda. Ver README.md, «Reglas que conviene no romper». -->
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <div class="header-inner">
+      <a class="brand" href="index.html"><span class="brand__mark">T</span>Taliq</a>
+      <nav class="nav" aria-label="Principal">
+        <a href="porque-taliq.html">Por qué Taliq</a>
+        <a href="como-funciona.html">Cómo funciona</a>
+        <a href="seguridad.html">Seguridad</a>
+        <a href="planes.html">Planes</a>
+        <a href="candidatos.html">Candidatos</a>
+        <a href="faq.html">FAQ</a>
+        <a href="blog/">Blog</a>
+      </nav>
+      <div class="header-actions">
+        <a class="btn btn--primary" href="index.html">Volver al inicio</a>
+        <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </div>
+  <div class="nav-mobile">
+    <div class="container" style="padding:0">
+      <a href="porque-taliq.html">Por qué Taliq</a>
+      <a href="como-funciona.html">Cómo funciona</a>
+      <a href="seguridad.html">Seguridad</a>
+      <a href="planes.html">Planes</a>
+      <a href="candidatos.html">Candidatos</a>
+      <a href="faq.html">FAQ</a>
+      <a href="blog/">Blog</a>
+    </div>
+  </div>
+</header>
+<!--
+  Página de llegada tras enviar el formulario de demo. site.js redirige acá
+  cuando POST /api/demo responde ok, así que una visita a /success.html es una
+  solicitud aceptada: por eso existe como página aparte, para poder medirla
+  desde fuera (logs de CloudFront, herramientas de conversión) sin instrumentar
+  el modal. Nadie la enlaza desde el menú ni el sitemap, y lleva noindex, para
+  que sólo llegue quien envió el formulario.
+
+  La página es estática y cualquiera puede abrirla a mano. Para separar el
+  envío real de una recarga, un «atrás» o una URL escrita, site.js llega con
+  ?s=<token> y el script de abajo lo quita de la barra de direcciones apenas
+  carga: en los logs, sólo la primera petición tras un envío lleva el parámetro.
+  Al contar, filtrar por `?s=`; una petición a /success.html sin él es alguien
+  que volvió o entró directo. El contenido no cambia en ningún caso.
+-->
+<script>
+  if (/[?&]s=/.test(location.search) && history.replaceState) {
+    history.replaceState(null, '', location.pathname);
+  }
+</script>
+<section>
+  <div class="container">
+    <div class="head head--center reveal">
+      <span class="eyebrow">Solicitud recibida</span>
+      <h1>Listo. Te contactamos pronto.</h1>
+      <p class="lede">Recibimos tu solicitud. En menos de 24 horas hábiles alguien del equipo se comunica contigo.</p>
+      <p><a class="btn btn--primary" href="index.html">Volver al inicio</a></p>
+    </div>
+  </div>
+</section>
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a class="brand" href="index.html"><span class="brand__mark">T</span>Taliq</a>
+        <p class="footer-tag">Software de selección (ATS) con IA que te acompaña en todo el proceso: desde la creación de la oferta hasta encontrar al candidato correcto, sin burocracia y con las mismas reglas para todos. Tus candidatos están acompañados y protegidos en cada paso.</p>
+      </div>
+      <div>
+        <h4>Producto</h4>
+        <ul>
+          <li><a href="porque-taliq.html">Por qué Taliq</a></li>
+          <li><a href="como-funciona.html">Cómo funciona</a></li>
+          <li><a href="seguridad.html">Seguridad</a></li>
+          <li><a href="planes.html">Planes</a></li>
+          <li><a href="candidatos.html">Candidatos</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Empresa</h4>
+        <ul>
+          <li><a href="index.html#nosotros">Quiénes somos</a></li>
+          <li><a href="blog/">Blog</a></li>
+          <li><a href="mailto:hola@taliq.cl">Contacto</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="privacidad.html">Política de privacidad</a></li>
+          <li><a href="#" data-cookies>Cookies</a></li>
+          <li><a href="#">Términos</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Taliq. Todos los derechos reservados.</span>
+      <span><a href="mailto:hola@taliq.cl">hola@taliq.cl</a> · Santiago, Chile · LATAM</span>
+    </div>
+  </div>
+</footer>
+<div class="cookie-banner" id="cookie-banner" role="dialog" aria-labelledby="cookie-title" hidden>
+  <div class="cookie-banner__inner">
+    <div class="cookie-banner__text">
+      <strong id="cookie-title">Este sitio no usa cookies de rastreo.</strong>
+      <p>Solo guardamos tu preferencia sobre este aviso en tu navegador. Si más adelante incorporamos analítica, se activará únicamente si la aceptas. <a href="privacidad.html#cookies">Más información</a>.</p>
+    </div>
+    <div class="cookie-banner__actions">
+      <button type="button" class="btn btn--ghost" data-consent="essential">Solo esenciales</button>
+      <button type="button" class="btn btn--primary" data-consent="all">Aceptar todo</button>
+    </div>
+  </div>
+</div>
+<script src="assets/site.js"></script>
+</body>
+</html>
