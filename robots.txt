@@ -2,3 +2,4 @@ User-agent: *
 Allow: /
 
 Sitemap: https://taliq.cl/sitemap.xml
+Sitemap: https://taliq.cl/blog/sitemap-index.xml
