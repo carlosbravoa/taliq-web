@@ -145,6 +145,8 @@ document.addEventListener('DOMContentLoaded', function () {
           msg = 'Ingresa un correo corporativo válido (no aceptamos correos temporales).';
         } else if (err && err.message === 'invalid_email') {
           msg = 'Revisa el formato del correo.';
+        } else if (err && err.message === 'invalid_website') {
+          msg = 'Revisa la dirección del sitio web (por ejemplo, tuempresa.cl).';
         }
         errorBox.textContent = msg;
         if (window.console) console.error('Demo form error:', err);

@@ -79,7 +79,7 @@
       <p>Esta política cubre únicamente el sitio web taliq.cl. El tratamiento de datos de postulantes dentro de la plataforma Taliq se rige por el contrato con cada empresa cliente, que actúa como responsable de esos datos; Taliq los trata por cuenta de ella como encargado.</p>
 
       <h3 id="datos">2. Qué datos recogemos</h3>
-      <p><strong>a) Formulario de solicitud de demo.</strong> Cuando pides una demo te solicitamos: nombre completo, empresa, correo corporativo, cargo, país y un rango aproximado de personas que contratan por mes. Junto con el formulario registramos automáticamente la dirección IP, el tipo de navegador, la página desde la que lo enviaste, la fecha y hora, y señales técnicas que usamos para detectar envíos automatizados (por ejemplo, el tiempo que tardaste en completarlo y un campo oculto que solo rellenan los robots). Si llegaste al sitio por un enlace de una campaña nuestra, también registramos las etiquetas de ese enlace (por ejemplo, <code>utm_source</code> o <code>utm_campaign</code>), que dicen de qué campaña vino la solicitud, no quién eres.</p>
+      <p><strong>a) Formulario de solicitud de demo.</strong> Cuando pides una demo te solicitamos: nombre completo, empresa, correo corporativo, sitio web de la empresa, cargo, país y un rango aproximado de personas que contratan por mes. Junto con el formulario registramos automáticamente la dirección IP, el tipo de navegador, la página desde la que lo enviaste, la fecha y hora, y señales técnicas que usamos para detectar envíos automatizados (por ejemplo, el tiempo que tardaste en completarlo y un campo oculto que solo rellenan los robots). Si llegaste al sitio por un enlace de una campaña nuestra, también registramos las etiquetas de ese enlace (por ejemplo, <code>utm_source</code> o <code>utm_campaign</code>), que dicen de qué campaña vino la solicitud, no quién eres.</p>
       <p><strong>b) Correo electrónico.</strong> Si nos escribes a hola@taliq.cl, conservamos tu dirección y el contenido del mensaje para poder responderte.</p>
       <p><strong>c) Datos técnicos de navegación.</strong> Nuestro proveedor de infraestructura (Amazon Web Services) procesa la dirección IP y los datos de la solicitud necesarios para entregar el sitio y protegerlo de abusos, como limitar la cantidad de envíos desde una misma IP. Las tipografías del sitio se cargan desde Google Fonts, lo que implica que tu navegador envía tu dirección IP a Google al descargarlas.</p>
       <p>No recogemos datos sensibles a través del sitio web ni perfilamos a los visitantes.</p>
@@ -187,8 +187,12 @@
         <div class="field"><label for="empresa">Empresa</label>
           <input type="text" id="empresa" name="empresa" placeholder="Nombre de tu empresa" required></div>
       </div>
-      <div class="field"><label for="email">Correo corporativo</label>
-        <input type="email" id="email" name="email" placeholder="tu@empresa.cl" required></div>
+      <div class="field-row">
+        <div class="field"><label for="email">Correo corporativo</label>
+          <input type="email" id="email" name="email" placeholder="tu@empresa.cl" required></div>
+        <div class="field"><label for="sitio_web">Sitio web</label>
+          <input type="text" id="sitio_web" name="sitio_web" placeholder="tuempresa.cl" inputmode="url" autocomplete="url" pattern="\s*(https?://)?[^\s\/]+\.[^\s]+\s*" title="Ingresa la dirección del sitio de tu empresa, por ejemplo tuempresa.cl" required></div>
+      </div>
       <div class="field-row">
         <div class="field"><label for="cargo">Cargo</label>
           <input type="text" id="cargo" name="cargo" placeholder="Tu cargo" required></div>

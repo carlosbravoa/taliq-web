@@ -181,8 +181,12 @@
         <div class="field"><label for="empresa">Empresa</label>
           <input type="text" id="empresa" name="empresa" placeholder="Nombre de tu empresa" required></div>
       </div>
-      <div class="field"><label for="email">Correo corporativo</label>
-        <input type="email" id="email" name="email" placeholder="tu@empresa.cl" required></div>
+      <div class="field-row">
+        <div class="field"><label for="email">Correo corporativo</label>
+          <input type="email" id="email" name="email" placeholder="tu@empresa.cl" required></div>
+        <div class="field"><label for="sitio_web">Sitio web</label>
+          <input type="text" id="sitio_web" name="sitio_web" placeholder="tuempresa.cl" inputmode="url" autocomplete="url" pattern="\s*(https?://)?[^\s\/]+\.[^\s]+\s*" title="Ingresa la dirección del sitio de tu empresa, por ejemplo tuempresa.cl" required></div>
+      </div>
       <div class="field-row">
         <div class="field"><label for="cargo">Cargo</label>
           <input type="text" id="cargo" name="cargo" placeholder="Tu cargo" required></div>
